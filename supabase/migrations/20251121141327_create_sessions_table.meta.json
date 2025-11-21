@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121141327_create_sessions_table",
+  "created_at": "2025-11-21T14:13:27Z",
+  "description": "Create sessions table for storing chat sessions between visitors and agents",
+  "tables_created": ["sessions"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS sessions CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

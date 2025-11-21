@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121141326_create_visitors_table",
+  "created_at": "2025-11-21T14:13:26Z",
+  "description": "Create visitors table for storing anonymized visitor information and consent status",
+  "tables_created": ["visitors"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS visitors CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

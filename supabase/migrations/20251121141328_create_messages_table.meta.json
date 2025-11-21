@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121141328_create_messages_table",
+  "created_at": "2025-11-21T14:13:28Z",
+  "description": "Create messages table for storing individual messages in chat sessions",
+  "tables_created": ["messages"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS messages CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

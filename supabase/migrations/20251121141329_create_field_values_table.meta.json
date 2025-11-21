@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121141329_create_field_values_table",
+  "created_at": "2025-11-21T14:13:29Z",
+  "description": "Create field_values table for storing validated field values collected during sessions",
+  "tables_created": ["field_values"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS field_values CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}
