@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121134428_create_faqs_table",
+  "created_at": "2025-11-21T13:44:28Z",
+  "description": "Create FAQs table for frequently asked questions",
+  "tables_created": ["faqs"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS faqs CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

@@ -7,7 +7,8 @@ import {
   Webhook,
   FileText,
   Users,
-  ChevronRight
+  ChevronRight,
+  HelpCircle
 } from "lucide-react"
 import { useState } from "react"
 
@@ -42,6 +43,11 @@ const navigation: NavGroup[] = [
     items: [
       { title: "Settings", href: "/settings", icon: Settings },
       { title: "Team", href: "/team", icon: Users },
+    ],
+  },
+  {
+    items: [
+      { title: "Help & Support", href: "/help", icon: HelpCircle },
     ],
   },
 ]

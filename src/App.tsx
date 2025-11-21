@@ -11,6 +11,7 @@ import { PublicChatPage } from "@/pages/PublicChatPage"
 import { SessionsPage } from "@/pages/SessionsPage"
 import { SettingsPage } from "@/pages/SettingsPage"
 import { NotFoundPage } from "@/pages/NotFoundPage"
+import { AboutHelpPage } from "@/pages/AboutHelpPage"
 
 // React Query client with optimal defaults
 const queryClient = new QueryClient({
@@ -42,6 +43,7 @@ function App() {
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/webhooks" element={<SessionsPage />} />
             <Route path="/team" element={<SessionsPage />} />
+            <Route path="/help" element={<AboutHelpPage />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
