@@ -1,68 +1,152 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Import Inter font - must be before @tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+/* Design System with CSS Custom Properties */
+/* Colors from design_rules.md - using RGB format for Tailwind */
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Primary Background - #22242A (deep charcoal) */
+    --background: 34 36 42;
+    --background-primary: 34 36 42;
+    --background-secondary: 40 42 48;
+    
+    /* Secondary Backgrounds - #282A30, #24262C */
+    --card: 40 42 48;
+    
+    /* Text Colors */
+    --foreground: 243 244 246; /* #F3F4F6 - off-white, high contrast */
+    --foreground-primary: 243 244 246;
+    --foreground-secondary: 161 161 170; /* #A1A1AA - muted gray */
+    --foreground-disabled: 107 114 128; /* #6B7280 - low emphasis */
+    --card-foreground: 243 244 246;
+    
+    /* Accent Colors */
+    --accent-yellow: 246 211 101; /* #F6D365 - status tags and highlights */
+    --accent-green: 74 222 128; /* #4ADE80 - task progress, labels */
+    --accent-blue: 96 165 250; /* #60A5FA - status indicators, toggles */
+    --accent-pink: 244 114 182; /* #F472B6 - avatars, minor accents */
+    
+    /* Status/Priority Colors */
+    --status-high: 248 113 113; /* #F87171 - red */
+    --status-medium: 251 191 36; /* #FBBF24 - amber */
+    --status-low: 110 231 183; /* #6EE7B7 - mint green */
+    
+    /* Borders and Separators - #303136 */
+    --border: 48 49 54;
+    --input: 48 49 54;
+    
+    /* Focus Ring - #60A5FA blue */
+    --ring: 96 165 250;
+    
+    /* Border Radius */
+    --radius: 0.75rem; /* 12px - rounded corners for cards and buttons */
   }
-  a:hover {
-    color: #747bff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
-  button {
-    background-color: #f9f9f9;
+  
+  body {
+    @apply bg-background-primary text-foreground-primary font-sans;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+  
+  /* Typography Hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+  
+  h6 {
+    @apply text-base md:text-lg;
+  }
+}
+
+@layer components {
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-200 hover:scale-[1.02] hover:shadow-card-hover;
+  }
+  
+  /* Button Animations */
+  .btn-primary {
+    @apply transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  /* Input Focus States */
+  .input-focus {
+    @apply focus:ring-2 focus:ring-accent-blue focus:ring-offset-2 focus:ring-offset-background-primary;
+  }
+}
+
+/* Smooth Scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-foreground-secondary;
+}
+
+/* Focus Visible for Accessibility */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-accent-blue;
+}
+
+/* Accordion Animations */
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
 }
