@@ -11,6 +11,7 @@ import { PublicChatPage } from "@/pages/PublicChatPage"
 import { SessionsPage } from "@/pages/SessionsPage"
 import { SettingsPage } from "@/pages/SettingsPage"
 import { NotFoundPage } from "@/pages/NotFoundPage"
+import { ServerErrorPage } from "@/pages/ServerErrorPage"
 import { AboutHelpPage } from "@/pages/AboutHelpPage"
 import { PrivacyTermsPage } from "@/pages/PrivacyTermsPage"
 
@@ -47,6 +48,7 @@ function App() {
             <Route path="/team" element={<SessionsPage />} />
             <Route path="/help" element={<AboutHelpPage />} />
           </Route>
+          <Route path="/500" element={<ServerErrorPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

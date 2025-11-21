@@ -28,6 +28,11 @@ async function apiRequest<T>(
     if (response.status === 401) {
       localStorage.removeItem('auth_token');
       window.location.href = '/login';
+    } else if (response.status >= 500) {
+      // Redirect to 500 error page for server errors
+      const sessionId = `api_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`;
+      window.location.href = `/500?sessionId=${sessionId}`;
+      throw new Error(`Server Error: ${response.status}`);
     }
     throw new Error(`API Error: ${response.status}`);
   }
