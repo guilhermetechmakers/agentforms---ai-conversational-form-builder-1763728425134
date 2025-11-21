@@ -12,6 +12,7 @@ import { SessionsPage } from "@/pages/SessionsPage"
 import { SettingsPage } from "@/pages/SettingsPage"
 import { NotFoundPage } from "@/pages/NotFoundPage"
 import { AboutHelpPage } from "@/pages/AboutHelpPage"
+import { PrivacyTermsPage } from "@/pages/PrivacyTermsPage"
 
 // React Query client with optimal defaults
 const queryClient = new QueryClient({
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/privacy-terms" element={<PrivacyTermsPage />} />
           <Route path="/chat/:agentId" element={<PublicChatPage />} />
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />

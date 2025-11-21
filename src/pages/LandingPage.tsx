@@ -73,11 +73,8 @@ export function LandingPage() {
               <p className="text-foreground-secondary">© 2024 AgentForms. All rights reserved.</p>
             </div>
             <div className="flex gap-6">
-              <Link to="/privacy" className="text-foreground-secondary hover:text-foreground-primary transition-colors">
-                Privacy
-              </Link>
-              <Link to="/terms" className="text-foreground-secondary hover:text-foreground-primary transition-colors">
-                Terms
+              <Link to="/privacy-terms" className="text-foreground-secondary hover:text-foreground-primary transition-colors">
+                Privacy & Terms
               </Link>
               <Link to="/help" className="text-foreground-secondary hover:text-foreground-primary transition-colors">
                 Help

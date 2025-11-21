@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121135525_create_legal_requests_table",
+  "created_at": "2025-11-21T13:55:25Z",
+  "description": "Create legal_requests table for storing user legal requests (data deletion, inquiries, etc.)",
+  "tables_created": ["legal_requests"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS legal_requests CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}
