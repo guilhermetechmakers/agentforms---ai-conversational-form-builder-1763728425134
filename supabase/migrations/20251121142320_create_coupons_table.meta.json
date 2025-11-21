@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121142320_create_coupons_table",
+  "created_at": "2025-11-21T14:23:20Z",
+  "description": "Create coupons table for storing discount coupons with codes, rates, and usage limits",
+  "tables_created": ["coupons"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS coupons CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

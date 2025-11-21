@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121142319_create_plans_table",
+  "created_at": "2025-11-21T14:23:19Z",
+  "description": "Create plans table for storing subscription plans with features, limits, and pricing",
+  "tables_created": ["plans"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS plans CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

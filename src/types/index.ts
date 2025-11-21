@@ -126,3 +126,8 @@ export interface RetryPolicy {
   backoff_type: 'exponential' | 'linear';
   initial_delay: number;
 }
+
+// Export database types
+export type { Plan, PlanInsert, PlanUpdate, PlanRow } from './database/plans'
+export type { Coupon, CouponInsert, CouponUpdate, CouponRow } from './database/coupons'
+export type { Transaction, TransactionInsert, TransactionUpdate, TransactionRow } from './database/transactions'

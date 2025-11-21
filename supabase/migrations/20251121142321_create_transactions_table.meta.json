@@ -1,0 +1,12 @@
+{
+  "migration_name": "20251121142321_create_transactions_table",
+  "created_at": "2025-11-21T14:23:21Z",
+  "description": "Create transactions table for storing payment transactions and subscription records",
+  "tables_created": ["transactions"],
+  "tables_modified": [],
+  "tables_deleted": [],
+  "breaking_changes": false,
+  "rollback_sql": "DROP TABLE IF EXISTS transactions CASCADE;",
+  "estimated_rows": 0,
+  "requires_downtime": false
+}

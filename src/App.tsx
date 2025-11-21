@@ -14,6 +14,8 @@ import { NotFoundPage } from "@/pages/NotFoundPage"
 import { ServerErrorPage } from "@/pages/ServerErrorPage"
 import { AboutHelpPage } from "@/pages/AboutHelpPage"
 import { PrivacyTermsPage } from "@/pages/PrivacyTermsPage"
+import { CheckoutPage } from "@/pages/CheckoutPage"
+import { CheckoutSuccessPage } from "@/pages/CheckoutSuccessPage"
 
 // React Query client with optimal defaults
 const queryClient = new QueryClient({
@@ -37,6 +39,8 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/privacy-terms" element={<PrivacyTermsPage />} />
           <Route path="/chat/:agentId" element={<PublicChatPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/checkout/success" element={<CheckoutSuccessPage />} />
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/agents" element={<DashboardPage />} />
